@@ -1,0 +1,93 @@
+CTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./static/css/UI.css" />
+    <title>show</title>
+    <style type="text/css">
+        form{
+            height: 800px;
+        }
+	.data{
+            display: none;    
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="contentCover">
+            <div class="header">
+                <h2 class="mainTitle">coolkids</h2>
+            </div>
+            <div class="content">
+                <div id="imagePre" style="text-align:center">
+                   
+                </div>
+                <div class="overlay">
+                    <div class="lightbox">
+                        <div class="textBox">
+                        <p class="here">Here is</p>
+                        <p class="resNameCN"></p>
+                        <p class="resNameEN">yooo</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="contentFooter">
+		<a id="cancel" style="margin-left:40px; text-decoration: none" href="/">
+                    <p style="padding-top:30%;">go on</p>
+                    <input type="button" class="take-picture" accept="image/*" style="display:none">
+                </a>                
+            </div> 
+
+   </div>
+   <div class="data" id="name">{{ info[0][1] }}</div> 
+   <div class="data" id="chname">{{ info[0][2]}}</div>
+    <div class="data" id="begin-x">{{ info[0][3] }}</div>
+    <div class="data" id="begin-y">{{ info[0][4] }}</div>
+    <div class="data" id="end-x">{{ info[0][5] }}</div>
+    <div class="data" id="end-y">{{ info[0][6] }}</div>
+    <div class="data" id="info">{{ info[0][7] }}</div>
+
+
+
+   <script src="./static/js/jquery.min.js"></script>
+        <!-- <script src="./static/js/UI.js"></script> -->
+        <script src="./static/js/cameraAPI.js"></script>
+   <script type="text/javascript">
+   var show = document.getElementById("show-picture");
+            var x = 0;
+            var y = 0;
+
+   window.onload = function(){
+                            //show.src = localStorage.getItem("PicUrl")
+                            var beginx,beginy,endx,endy,info;
+                            setTimeout(function(){
+                                    name = document.getElementById("name").innerHTML;
+                                    chname = document.getElementById("chname").innerHTML;
+                                    beginx = document.getElementById("begin-x").innerHTML;
+                                    beginy = document.getElementById("begin-y").innerHTML;
+                                    endx = document.getElementById("end-x").innerHTML;
+                                    endy = document.getElementById("end-y").innerHTML;
+                                    info = document.getElementById("info").innerHTML;
+
+
+                                    $(".resNameEN").html(name);
+                                    $(".resNameCN").html(chname);
+
+                            },1000)                            
+
+                        }
+
+
+   </script>
+
+
+</body> 
+

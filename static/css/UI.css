@@ -1,0 +1,271 @@
+    * {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    @font-face {
+        font-family: 'EDO';
+        src: url(./edo.ttf);
+    }
+
+    @font-face {
+        font-family: 'gloria';
+        src: url(./gloria.ttf);
+    }
+    @font-face {
+        font-family: 'FZJHSXJW';
+        src: url(./FZJHSXJW.woff);
+    }
+
+@font-face {
+    font-family: 'FZZhengHeiS-EL-GB';
+    src: url(./FZZhengHeiS-EL-GB.woff);
+}
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .wrapper {
+        overflow: hidden;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #frontCover {
+        background-image: url('../img/coolkids-s.jpg');
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        min-height: 100%;
+        width: 100%;
+    }
+
+    #imageTake {
+        background-image: url('../img/start-s.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100%;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .frontFooter {
+        position: absolute;
+        bottom: 2em;
+        height: 4.5em;
+        width: 100%;
+    }
+
+    #contentCover {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+
+    .header {
+        background-color: #ffffff;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 3em;
+        text-align: center;
+        border-bottom: 0.2em solid rgb(98, 197, 226);
+        font-family: 'EDO';
+    }
+
+    .mainTitle {
+        line-height: 3em;
+        vertical-align: middle;
+        color: #000000;
+        font-size: 20px;
+    }
+
+    .content {
+        background-color: #000000;
+        position: absolute;
+        top: 3.2em;
+        bottom: 5em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #show-picture {
+        display: table-cell;
+        max-height: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+
+    .overlay {
+        position: fixed;
+        right: 0;
+        top: 3.2em;
+        bottom: 5em;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .lightbox {
+        position: absolute;
+        z-index: 1;
+        margin: 0 auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        height: 80%;
+        width: 90%;
+        background-color: rgba(255, 255, 255, 1);
+        border: 0.2em dashed rgb(98, 197, 226);
+    }
+
+    .textBox {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        font-size: 36px;
+
+        margin: 0 auto;
+    }
+
+    .here {
+        font-size: 24px;
+        font-family: 'FZJHSXJW','FZZhengHeiS-EL-GB',"Microsoft YaHei";
+        text-align: left;
+        line-height: 1.25em;
+    }
+
+    .resNameCN {
+        font-size: 48px;
+        font-family: 'FZJHSXJW','FZZhengHeiS-EL-GB',"Microsoft YaHei";
+        text-align: center;
+        line-height: 1.25em;
+    }
+
+    .resNameEN {
+        font-size: 36px;
+        font-family: 'gloria';
+        text-align: right;
+        margin: 0 0.25em;
+        line-height: 1.25em;
+    }
+
+    .contentFooter {
+        background-color: #ffffff;
+        position: absolute;
+        bottom: 0em;
+        height: 5em;
+        width: 100%;
+        text-align: center;
+    }
+
+    #cancel {
+        background-color: #62c5e2;
+        background-image: url('../img/round.png');
+        background-size: cover;
+        display: inline-block;
+        height: 4em;
+        width: 4em;
+        margin-top: 0.5em;
+        border-radius: 50px;
+        margin-right: 2.5em;
+    }
+
+    #change-picture, #take-picture {
+        opacity: 0;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+    }
+
+    #sure {
+        background-color: #6cc775;
+        background-image: url('../img/sure.png');
+        background-size: cover;
+        display: inline-block;
+        height: 4em;
+        width: 4em;
+        margin-top: 0.5em;
+        border-radius: 50px;
+        margin-left: 2.5em;
+        vertical-align: top;
+    }
+
+    #submit {
+        opacity: 0;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+    }
+
+    @media screen and(max-width:320px) {
+        .lightbox {
+            height: 40%;
+        }
+        .resNameEN {
+            font-size: 36px;
+        }
+    }
+
+    @media screen and (min-width:768px) {
+        .mainTitle {
+            font-size: 20px;
+        }
+         * {
+        font-size: 36px;
+    }
+        #frontCover {
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .here {
+            font-size: 48px;
+        }
+
+        .resNameCN {
+            font-size: 72px;
+        }
+
+        .resNameEN {
+            font-size: 60px;
+        }
+    }
+
+    @media screen and (min-width:1024px) {
+ * {
+        font-size: 48px;
+    }
+
+        .here {
+            font-size: 84px;
+        }
+
+        .resNameCN {
+            font-size: 108px;
+        }
+
+        .resNameEN {
+            font-size: 96px;
+        }
+    }

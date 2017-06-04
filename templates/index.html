@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./static/css/UI.css" />
+    <title>Here puts your name</title>
+    <style type="text/css">
+        form{
+            height: 100%;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="wrapper">
+        <form action="{{ url_for("show") }}" name="form" method="post" enctype="multipart/form-data">
+            <div id="frontCover">
+                <div class="frontFooter">
+                    <div id="imageTake">
+                        <label >
+                            <input type="file" name="file1"  id="take-picture" accept="image/*">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        <div id="contentCover">
+            <div class="header">
+                <h2 class="mainTitle">coolkids</h2>
+            </div>
+            <div class="content">
+                <div id="imagePre" style="text-align:center">
+                    <img src="about:blank" alt="" id="show-picture" width="100%" style="position:absolute">
+                    <img src="../static/img/status.gif" id="wait" style="display:none">
+                </div>
+            </div>
+
+            <div class="contentFooter">
+                <div id="cancel">
+                    <input type="file" class="take-picture" name="file2" id="change-picture" accept="image/*">
+                </div>
+                <div id="sure">
+                    <input type="submit" id="submit" value="确定" >
+                </div>
+            </div> 
+
+        </div>
+        </form>
+
+
+        <script src="./static/js/jquery.min.js"></script>
+        <script src="./static/js/UI.js"></script>
+        <script src="./static/js/cameraAPI.js"></script>
+
+        <script type="text/javascript">
+            var show = document.getElementById("show-picture");
+            var changepicture = document.getElementById("change-picture");
+
+
+            $("#cancel").click(function(){
+            show.src = "about:blank";
+            $("#take-picture").val = null; 
+            $("#show-picture").hide();
+            changepicture.onchange = function(e){
+                var files = event.target.files;
+                var URL = window.URL || window.webkitURL;
+                    // Create ObjectURL
+                    var imgURL = URL.createObjectURL(files[0]);
+
+                    // Set img src to ObjectURL
+                    show.src = imgURL;
+                    
+
+                    $("#show-picture").show();
+            }
+        })
+
+
+
+        $("#sure").click(function(){
+                localStorage.setItem("PicUrl", show.src);
+		$("#wait").show();
+        })
+
+
+        </script>
+
+</body>
+</html>
